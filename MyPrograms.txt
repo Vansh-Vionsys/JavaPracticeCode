@@ -1,5 +1,4 @@
 ----------Comman Proggram----------------
-
 1.proggram Number is prime no. or not*
 2.Multiplication table*
 3.Print numbers for 1-10 using reccursion
@@ -11,9 +10,9 @@
 25.Java code to reverse Number*
 26.Count Number of Digit in Number*
 32.Star Patter IMP Question
+36.Write a java code to take 2 input number and find Question & Reminder- TODO
 
 ----------------Array-------------------
-
 8.Maximum and Minimum of Array*   //Apna Collage -Array
 10.check a  name is present or not present in array (linear search) //Apna Collage -Array alse with String
 11.check a number is present in array or not (Binary search)* //Apna Collage -Array
@@ -26,7 +25,6 @@
 23.product of array is even or odd if even then return sum of arry otherwise return 0
 
 -----------------String----------------
-
 13.Proggram to reverse a string*
 14.String/number palindrome or not proggram*
 18.Addition of number in the given string (abc123def456ghi789) ex. 123+456+789 ans. 1368
@@ -37,9 +35,9 @@
 28.string commpration "aaabbbcccc" to "a3b3c4"*
 33.Reverse Words of String "Nsquare Xperts" -> Answer : "erauqsN strepX" //Remaining
 34.*String is Given task is to find maximum number of Charater Accourde EX> String str="tssrtsbesscsess" answer is s8 - baxture
+35.Remove leading and trailing space for given string -TODO
 
 ----------------Sorting-----------------
-
 16.Bubble Sort
 29.Selection Sort  
 30.Insertion Sort
@@ -1229,3 +1227,43 @@ public class MyTest
 		
 	}
 }
+
+35.
+public class TrimExample {
+    public static void main(String[] args) {
+        String str = "   Hello, World!   ";
+        String trimmedStr = str.trim();
+        System.out.println("Before trim: +str);
+        System.out.println("After trim: +trimmedStr);
+    }
+}
+
+36.
+import java.util.Scanner;
+
+public class QuotientRemainder {
+    public static void main(String[] args) {
+        // Create Scanner object for input
+        Scanner scanner = new Scanner(System.in);
+
+        // Taking two numbers as input
+        System.out.print("Enter the dividend: ");
+        int dividend = scanner.nextInt();
+
+        System.out.print("Enter the divisor: ");
+        int divisor = scanner.nextInt();
+
+        // Calculate quotient and remainder
+        int quotient = dividend / divisor;
+        int remainder = dividend % divisor;
+
+        // Display results
+        System.out.println("Quotient: " + quotient);
+        System.out.println("Remainder: " + remainder);
+
+        // Close scanner
+        scanner.close();
+    }
+}
+
+
