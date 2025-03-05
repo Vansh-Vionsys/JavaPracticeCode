@@ -1,0 +1,1231 @@
+----------Comman Proggram----------------
+
+1.proggram Number is prime no. or not*
+2.Multiplication table*
+3.Print numbers for 1-10 using reccursion
+4.Write a program to find the sum of Natural Numbers using Recursion*
+5.Fibonacci  series*
+6.Factorial of number*
+7.Amstrong number*
+24.Proggram to swap to number(Without third Variable)*
+25.Java code to reverse Number*
+26.Count Number of Digit in Number*
+32.Star Patter IMP Question
+
+----------------Array-------------------
+
+8.Maximum and Minimum of Array*   //Apna Collage -Array
+10.check a  name is present or not present in array (linear search) //Apna Collage -Array alse with String
+11.check a number is present in array or not (Binary search)* //Apna Collage -Array
+12.Reverse an array (best Time complexity) //Apna Collage-Array
+22.Trapping Rain Water -Array
+15.Printing subarray of an array
+9.Given an array of non-duplicating numbers from 1 to n where one number is missing, write
+  an efficient java program to find that missing number*
+20.Sort and Unsorted array and Remove repitetive Number from it .(without using regax)*
+23.product of array is even or odd if even then return sum of arry otherwise return 0
+
+-----------------String----------------
+
+13.Proggram to reverse a string*
+14.String/number palindrome or not proggram*
+18.Addition of number in the given string (abc123def456ghi789) ex. 123+456+789 ans. 1368
+19.Addition of single-single-number in the given string (abc123def456ghi789) ex. 1+2+3+4+5+6+7+8+9 ans. 45
+21.String is Given "ABA CDA HCD ABA CDA CDA HCD TVM  HCD YGK HCD" Repitation Count  (Without Regx)
+   OUTPUT : - ABA-2 CDA-3  HCD-4  
+27.Java code to convert first charecter of string to upercase "hi i am vansh" to "Hi I AM Vansh"
+28.string commpration "aaabbbcccc" to "a3b3c4"*
+33.Reverse Words of String "Nsquare Xperts" -> Answer : "erauqsN strepX" //Remaining
+34.*String is Given task is to find maximum number of Charater Accourde EX> String str="tssrtsbesscsess" answer is s8 - baxture
+
+----------------Sorting-----------------
+
+16.Bubble Sort
+29.Selection Sort  
+30.Insertion Sort
+17.Quick sort --Divide and Conqure
+31.Merg sort --Divide and Conqure
+
+//________________________________________________________
+
+1.
+//Prime Number in a Range
+
+import java.util.Scanner;
+public class MyTest{
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.print("Enter a Number : ");
+		int n= sc.nextInt();
+		sc.close();
+		if(myPrimeChack(n)) {
+			System.out.println("The Number is Prime");
+		}
+		else {
+			System.out.println("The Number is Not a Prime");
+		}
+		
+	}
+	public static boolean myPrimeChack(int a)
+	{
+		if (a <= 1) {
+            return false; // Numbers less than or equal to 1 are not prime
+        }
+		else if(a==2)
+		{
+			return true;
+		}
+		else {
+			for(int i=2;i<=a/2;i++)
+			{
+				if(a%i==0)
+				{
+					return false;
+				}
+			}
+			
+			return true;
+		}
+		
+	}
+}
+
+
+2.
+import java.util.Scanner;
+
+public class MyTest {
+
+    public static void Myfun(int a)
+    {
+        for(int i=0;i<=10;i++)
+        {
+            int Mul=a*i;
+            System.out.println("->"+Mul);
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter a No.:");
+        int x= sc.nextInt();
+        Myfun(x);
+        sc.close();
+    }
+}
+
+
+3.
+//reccursion
+public class MyTest {
+    
+    public static void myFun(int N)
+    {
+        if (N==1)
+        {
+            System.out.print(" "+N+" ");
+            return;
+        }
+        myFun(N-1);
+        System.out.print(N+" ");
+    }
+    
+    public static void main(String[] args) {
+        int N=10;
+        myFun(N);
+    }
+}
+
+
+4.
+public class MyTest
+{
+  public static int mySum (int n)
+  {
+    if (n == 0)
+      return n;
+
+    return n + mySum (n - 1);
+  }
+
+  public static void main (String[]args)
+  {
+
+    int n = 10;
+    int sum = mySum(n);
+    System.out.println (sum);
+
+  }
+
+}
+
+
+5.  
+import java.util.Scanner;
+
+public class MyTest {
+
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter a number:");
+        int x= sc.nextInt();
+        for(int i=0;i<=x;i++)
+        {
+            System.out.println(" "+myfacbanocchi(i));
+        }
+        sc.close();
+    }
+    public static int myfacbanocchi(int a)
+    {
+        if(a==0)
+        {
+            return 0;
+        }
+        else if (a==1)
+        {
+            return 1;
+        }
+        else
+        {
+            return (myfacbanocchi(a-1)+myfacbanocchi(a-2));
+        }
+    }
+}
+
+6.
+
+import java.util.Scanner;
+
+public class MyTest {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int num1;
+        do {
+            System.out.println("Enter a Number: ");
+            num1 = sc.nextInt();
+
+            if (num1 < 0) {
+                System.out.println("Please enter a positive number.");
+            }
+
+
+        } while (num1 < 0);
+
+        System.out.println("Factorial is: " + myFact(num1));
+
+        // Close the scanner
+        sc.close();
+    }
+
+    public static int myFact(int n) {
+        if (n == 0 || n == 1) {
+            return 1;
+        } else {
+
+            return n * myFact(n - 1);
+        }
+    }
+}
+-----------------------Another Mathod-------------------
+public class MyTest {
+   public static void main(String[] args) {
+       int num = 5;
+       int factorialResult = 1;
+       for(int i = 1; i <= num; ++i)
+       {
+           factorialResult *= i;
+       }
+       System.out.println("Factorial: "+factorialResult);
+   }
+   
+}
+
+
+7.
+//153 is armstrong number
+import java.util.Scanner;
+
+public class MyTest {
+
+    public static void main(String[] args) {
+        int Sum=0;
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter a number :");
+        int x= sc.nextInt();
+        int temp=x;
+        while (x>0) {
+           int a=x%10;
+            Sum=Sum+(a*a*a);
+            x=x/10;
+        }
+        
+        if (Sum==temp) {
+            System.out.println("Armstrong");
+        }
+        else{
+            System.out.println("Not Aramstrong");
+        }
+    }
+}
+
+
+8.
+public class MyTest {
+    public static void main(String[] args) {
+        int[] arr = {4, 2, 7, 1, 9, 3};
+        int n = arr.length;
+
+        int[] result = findMinMax(arr, n);
+
+        System.out.println("Minimum value: " + result[0]);
+        System.out.println("Maximum value: " + result[1]);
+    }
+
+    public static int[] findMinMax(int[] arr, int n) {
+        int[] result = new int[2];
+
+        // Check if the array is not empty
+        if (n > 0) {
+            int min = arr[0];
+            int max = arr[0];
+
+            for (int i = 1; i < n; i++) {
+                if (arr[i] < min) {
+                    min = arr[i];
+                }
+                if (arr[i] > max) {
+                    max = arr[i];
+                }
+            }
+
+            result[0] = min; // Minimum value
+            result[1] = max; // Maximum value
+        }
+
+        return result;
+    }
+}
+ 
+//----another method------
+
+public class MyTest {
+
+    public static void main(String[] args) {
+        int arr[]={2,5,9,6,7,3}; //larg=9 and small=2
+        mylargAndSmall(arr);
+
+    }
+
+    public static void mylargAndSmall(int []arr1)
+    {
+        int larg= Integer.MIN_VALUE;
+        int smal=Integer.MAX_VALUE;
+        for(int i=0;i<arr1.length;i++)
+        {
+            if (arr1[i]>=larg) {
+                larg=arr1[i];
+            }
+        }
+        System.out.println(larg);
+
+        for(int i=0;i<arr1.length;i++)
+        {
+            if (arr1[i]<=smal) {
+                smal=arr1[i];
+            }
+        }
+        System.out.println(smal);
+    }
+}
+
+9.
+
+public class MyTest {
+
+    public static void main(String[] args) {
+ 
+        int[] array={4,3,8,7,2,6,1}; // here missing no.is 5
+        int missingNumber = findMissingNum(array);
+
+        System.out.println("Missing Number is "+ missingNumber); 
+
+    }
+    public static int findMissingNum(int[] array) {
+        int n=array.length+1;
+        int sumOfFirstNNums=n*(n+1)/2; //n=8 here
+        int actualSumOfArr=0;
+        for (int i = 0; i < array.length; i++) {
+            actualSumOfArr+=array[i];
+        }
+        return sumOfFirstNNums-actualSumOfArr;
+    }
+}
+
+10.
+public class MyTest {
+
+    public static int myfun(String str[],String key)
+    {
+        for(int i=0;i<str.length;i++)
+        {
+            if (key.equals(str[i])) {
+                return i;
+            }
+            
+        }
+      return -1;
+    }
+
+
+
+    public static void main(String[] args) {
+        
+        String str[]={"vansh", "keshav", "sarvesh", "atharva", "ganesh"};
+        String key="sarvesh";
+
+        int index=myfun(str, key);
+        if (index==-1) {
+            System.out.println("Not found Element");
+        }
+        else
+        {
+            System.out.println("Element found at index-"+index);
+            
+        }
+    }
+}
+
+
+11.
+public class MyTest {
+
+    public static void main(String[] args) {
+        System.out.println("Hellow  wolrd");
+        int arr1[]={9,12,15,16,18,21,25,26,29,32,35,40};
+        int key=29;
+        int var1=getBinary( arr1, key);
+        if (var1<=arr1.length) {
+            System.out.println("Element found..! at index :"+var1);
+        }
+        else{
+            System.out.println("Not found");
+        }
+    }
+    public static int getBinary(int arr1[],int key)
+    {
+        int start=0;
+        int end=arr1.length-1;
+       
+        while (start<=end) {
+            int mid=(start+end)/2;
+            if (key>arr1[mid]) {
+                start=mid+1;
+            }
+            else if (key<arr1[mid])
+            {
+                end=mid-1;
+            }
+            else if(key==arr1[mid])
+            {
+                return mid;
+            }
+        }
+        return -1;
+    }
+}
+
+
+12.
+public class MyTest {
+
+    public static void main(String[] args) {
+        int arr[]={2,4,6,8,10};
+        Myreverse(arr);
+    }
+    public static void Myreverse(int arr[])
+    {
+        int start=0;
+        int end=arr.length-1;
+        int temp;
+        while (start<=end) {
+            temp=arr[end];
+            arr[end]=arr[start];
+            arr[start]=temp;
+            start++;
+            end--;
+        }
+        System.out.println("Reverse: ");
+        for(int i=0;i<arr.length;i++)
+        {
+            System.out.println(arr[i]+" ");
+        }
+    }
+}
+
+13.
+
+class MyTest{
+    public static void main(String[] args){
+        //Input String
+        String str = "Welcome to InterviewBit";
+        
+   
+        int i = 0, j = str.length()-1;
+        
+        //Result character array to store the reversed string.
+        char[] revString = new char[j+1];
+        
+        //Looping and reversing the string.
+        while(i <= j){
+            revString[j] = str.charAt(i);
+            revString[i] = str.charAt(j);
+            i++;
+            j--;
+        }
+        //Printing the reversed String.
+        System.out.println("Reversed String = " + String.valueOf(revString));
+    }
+}
+------------Another Method------------------
+public class MyTest {
+
+    public static void main(String[] args) {
+        String str1="Welcome to InterviewBit";
+        String rev="";
+
+        int len=str1.length();
+        for(int i=len-1;i>=0;i--)
+        {
+            rev=rev+str1.charAt(i);
+        }
+
+        System.out.println("Reverce of String is : "+rev);
+        }
+}
+
+
+
+
+14.
+public class MyTest 
+    {
+    int chackplindrom(String str){
+        
+        char[] a=str.toCharArray();
+         int n=a.length;
+         int left=0;
+         int right=n-1;
+    
+        while (left<=right) {
+            if(a[left]!=a[right])
+            {
+                return 0;
+
+            }
+            else
+            {
+                left++;
+                right--;
+            }       
+        }
+        
+      return 1 ;
+    }
+
+    public static void main(String[] args) 
+        {
+        MyTest sol=new MyTest();
+        String s="abba";
+        int sum=sol.chackplindrom(s);
+        System.out.println(sum);
+        if(sum==1){
+        System.out.println("Yes this is palindrom: "+s);     
+            }
+        else
+        {
+            System.out.println("Not a Plaindrom"+s);
+        }
+
+        }
+    }
+---------another method------------------------
+
+import java.util.Scanner;
+
+public class MyTest {
+
+    public static void main(String[] args) {
+        //String Palindrom
+
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter a String : ");
+        String str1=sc.nextLine();
+
+        if (chackPalindrom(str1)) {
+            System.out.println(str1+" is a Palindrom");
+        }
+        else
+        {
+            System.out.println(str1+" is not a palindrom");
+        }
+
+        
+    }
+    public static boolean chackPalindrom(String str)
+    {
+        int n= str.length();
+
+        for(int i=0;i<n;i++)
+        {
+            if (str.charAt(i)!=str.charAt(n-1-i)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+
+}
+
+15.
+    public class MyTest {
+
+    public static void main(String[] args) {
+        int arr[]={2,4,6,8,10};
+        Mysubarray(arr);
+    }
+    public static void Mysubarray(int arr[])
+    {
+        int totalSubarry=0;
+        for(int i=0;i<arr.length;i++)
+        {
+            int start=i;
+            for(int j=i;j<arr.length;j++)
+            {
+                int end=j;
+            
+            for(int k=start;k<=end;k++)
+            {
+                System.out.print(arr[k]+" ");
+            }
+            totalSubarry++;
+                System.out.println();
+            }
+            System.out.println();
+        }
+        System.out.println("Total SUbarrya are :"+totalSubarry);
+
+    }
+}
+//formula to calculate total subarry is : - (n(n+1)/2)
+ 
+
+
+16.
+//Bubble sort - By naresh it 
+
+public class MyTest {
+
+    public static void main(String[] args) {
+        int arr1[]={5,3,4,1,2}; //1 2 3 4 5
+
+        MysortingBubble(arr1);
+        //printing array 
+        for(int i=0;i<arr1.length;i++)
+        {
+            System.out.print(arr1[i]+" ");
+        }
+    }
+    public static int [] MysortingBubble(int myarr[])
+    {
+        int n= myarr.length;
+
+        for(int i=0;i<n-1;i++)
+        {
+            for(int j=0;j<n-1-i;j++)
+            
+            {
+                if (myarr[j]>myarr[j+1])
+                {        
+                    int temp= myarr[j];
+                    myarr[j]=myarr[j+1];
+                    myarr[j+1]=temp;
+                }
+            }
+        }
+
+        return myarr;
+
+    }
+}
+ 
+17. //Quick SOrt --remaining
+
+
+18. 
+// -- Using ragular expression --
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class MyTest {
+    public static void main(String[] args) {
+        String inputString = "abc123def456ghi789";
+        int sum = sumIntegersWithRegex(inputString);
+        System.out.println("Sum of all integers in the string: " + sum);
+    }
+
+    public static int sumIntegersWithRegex(String inputString) {
+        int sum = 0;
+        Pattern pattern = Pattern.compile("\\d+"); // Matches one or more digits or "[0-9]+"
+
+        Matcher matcher = pattern.matcher(inputString);
+
+        while (matcher.find()) {
+            sum += Integer.parseInt(matcher.group());
+        }
+
+        return sum;
+    }
+}
+
+
+// -- another metnod --
+
+public class MyTest {
+    public static void main(String[] args) {
+        String inputString = "abc123def456ghi789";
+        int sum = addIntegersInString(inputString);
+        System.out.println("Sum of integers in the string: " + sum);
+    }
+
+    public static int addIntegersInString(String inputString) {
+        int sum = 0;
+         lder currentNumber = new StringBuilder();
+
+        for (int i = 0; i < inputString.length(); i++) {
+            char currentChar = inputString.charAt(i);
+
+            if (Character.isDigit(currentChar)) {
+                currentNumber.append(currentChar);
+            } else if (currentNumber.length() > 0) {
+                sum += Integer.parseInt(currentNumber.toString());
+                currentNumber.setLength(0); // Reset the StringBuilder for the next number
+            }
+        }
+
+        // Check for the last number in case it ends at the end of the string
+        if (currentNumber.length() > 0) {
+            sum += Integer.parseInt(currentNumber.toString());
+        }
+
+        return sum;
+    }
+}
+
+19.
+// -- Using regex --
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class MyTest {
+    public static void main(String[] args) {
+        String inputString = "abc123def456ghi789";
+        int sum = sumSingleDigitIntegersWithRegex(inputString);
+        System.out.println("Sum of single-digit integers in the string: " + sum);
+    }
+
+    public static int sumSingleDigitIntegersWithRegex(String inputString) {
+        int sum = 0;
+        Pattern pattern = Pattern.compile("[0-9]"); // Matches a single digit
+
+        Matcher matcher = pattern.matcher(inputString);
+
+        while (matcher.find()) {
+            sum += Integer.parseInt(matcher.group());
+        }
+
+        return sum;
+    }
+}
+
+// -- another metnod --
+
+public class SumSingleDigitIntegers {
+    public static void main(String[] args) {
+        String inputString = "abc123def456ghi789";
+        int sum = sumSingleDigitIntegers(inputString);
+        System.out.println("Sum of single-digit integers in the string: " + sum);
+    }
+
+    public static int sumSingleDigitIntegers(String inputString) {
+        int sum = 0;
+
+        for (int i = 0; i < inputString.length(); i++) {
+            char currentChar = inputString.charAt(i);
+
+            if (Character.isDigit(currentChar)) {
+                int digit = Character.getNumericValue(currentChar);
+                if (digit >= 0 && digit <= 9) {
+                    sum += digit;
+                }
+            }
+        }
+
+        return sum;
+    }
+}
+    
+20.
+import java.util.Arrays;
+
+public class MyTest {
+	public static void main(String[] args) {
+    int unsortedArray[]={4,6,2,5,8,9,4,8} ; //{2,4,5,6,8,9} should be answer
+    int sortedArray[]= new int[unsortedArray.length];
+    Arrays.sort(unsortedArray); // here we have use direct Arrays Class
+    for(int i=0;i<unsortedArray.length;i++)
+    {
+      sortedArray[i]=unsortedArray[i];
+    }
+
+    int [] finalArray = MyFun(sortedArray);
+    //System.out.println("Sorted and Unique Array: " + Arrays.toString(finalArray)); 
+    for(int i=0;i<finalArray.length;i++)
+    {
+      System.out.print(finalArray[i]);
+    }
+  }
+
+  public static int [] MyFun(int [] arr)
+  {
+
+    if (arr == null|| arr.length==0) {
+      return new int[0];
+    }
+    int count = 1;
+
+    for(int i=1;i<arr.length;i++)
+    {
+      if (arr[i]!=arr[i-1]) {
+        count ++;
+      }
+    }
+    int [] result= new int[count] ;
+    result[0]=arr[0];
+    int j=1;
+    for(int i=1;i<arr.length;i++)
+    {
+      if(arr[i]!=arr[i-1]){
+
+      result[j]=arr[i];
+      j++;
+      }
+    }
+    return result;
+  }
+}
+
+21.
+
+public class MyTest {
+  public static void main(String[] args) {
+      String inputString = "ABA CDA HCD ABA CDA CDA HCD TVM HCD YGK HCD";
+      printRepetitionCount(inputString);
+  }
+
+  public static void printRepetitionCount(String input) {
+      if (input == null || input.isEmpty()) {
+          System.out.println("Input string is empty.");
+          return;
+      }
+
+      // Split the input string into words
+      String[] words = input.split("\\s+");
+
+      // Initialize arrays to store unique words and their repetition count
+      String[] uniqueWords = new String[words.length];
+      int[] repetitionCount = new int[words.length];
+      int uniqueCount = 0;
+
+      // Loop through the words to count repetitions
+      for (String word : words) {
+          boolean found = false;
+
+          // Check if the word is already in the uniqueWords array
+          for (int i = 0; i < uniqueCount; i++) {
+              if (uniqueWords[i].equals(word)) {
+                  repetitionCount[i]++;
+                  found = true;
+                  break;
+              }
+          }
+
+          // If the word is not found, add it to the uniqueWords array
+          if (!found) {
+              uniqueWords[uniqueCount] = word;
+              repetitionCount[uniqueCount] = 1;
+              uniqueCount++;
+          }
+      }
+
+      // Print the repetition count for each unique word
+      for (int i = 0; i < uniqueCount; i++) {
+          System.out.println(uniqueWords[i] + "-" + repetitionCount[i]);
+      }
+  }
+}
+ 
+
+22.
+public class MyTest {
+
+    public static void main(String[] args) {
+        //Traping rain Water
+        int hight[]={4, 2, 0, 6, 3, 2, 5};
+        
+        System.out.println("Traped Water is : "+TarpingWaterProblem(hight));
+    }
+
+    public static int TarpingWaterProblem(int hight[])
+    {
+        int n=hight.length;
+        //calculating left max boundry -array
+
+        int leftMax[]=new int[n];
+        leftMax[0]=hight[0];
+        for(int i=1;i<n;i++)
+        {
+            leftMax[i]=Math.max(hight[i], leftMax[i-1]);
+        }
+
+        //calculating right max boundry -array
+        int rightMax[]=new int [n];
+        rightMax[n-1]=hight[n-1];
+        for(int i=n-2;i>=0;i--)
+        {
+            rightMax[i]=Math.max(hight[i], rightMax[i+1]);
+        }
+        //
+
+        int trapedWater=0;
+        int waterLevel=0;
+        for(int i=0;i<n;i++)
+        {
+            //water level = min(leftmax[i], rightmax[i])
+           waterLevel=Math.min(leftMax[i], rightMax[i]);
+           //traped water = waterlevel-hight[i]
+           trapedWater=trapedWater+(waterLevel-hight[i]);  
+        }
+
+        return trapedWater;
+    }
+} 
+
+23.
+public class MyTest {
+
+    public static void main(String[] args) {
+        int arr[]={1,2,3,4};
+        int prodt=1;
+        int sum=0;
+        for(int i=0;i<arr.length;i++)
+        {
+             prodt=arr[i]*prodt;
+        }
+
+        System.out.println(prodt);
+        if (prodt%2==0) {
+            for(int i=0;i<arr.length;i++){
+                 sum=arr[i]+sum;
+            
+        }
+        System.out.println("Sum of Array is : "+sum);
+        
+        }
+        else{
+            System.out.println("0");
+        }
+    }
+}
+
+24.
+public class MyTest {
+
+    public static void main(String[] args) {
+        int a=10,b=20;
+        //a=20 b=10
+
+        a=a+b;  //a=10+20=30
+        b=a-b;  //b=30-20=10 //done
+        a=a-b;  //a=30-10=20 //done
+        System.out.println("A : "+a+" "+"B : "+b);
+    }
+}
+
+
+25.
+public class MyTest {
+
+    public static void main(String[] args) {
+        int a=2563;
+        //3652
+        int rev=0;
+
+        while (a!=0) {
+            
+            rev=rev*10+a%10;
+
+            a=a/10;
+
+        }
+
+        System.out.println(rev);
+    }
+}
+
+26.
+public class MyTest {
+
+    public static void main(String[] args) {
+        int a=12365;
+        int count=0;
+        while (a!=0) {
+         	// int digit = a % 10; // Get the last digit
+            // sum += digit;       // Add it to the sum to get sum of digit
+            a=a/10;            
+            count++;
+        }
+        System.out.println(count);
+    }
+}
+
+
+27.
+//Java code to convert first charecter of string to upercase 
+
+public class MyTest {
+
+    public static void main(String[] args) {
+        String str="hi i am Vansh";
+        System.out.println("Orignal String is : "+str);
+        String str2=myConvertFun(str);
+        System.out.println("Capatlized String is "+str2);
+
+    }
+
+    public static String myConvertFun(String st1)
+    {
+        StringBuffer sb= new StringBuffer("");
+        //we use string builder to modifucation in it current string it not create new string each time
+
+        char c=Character.toUpperCase(st1.charAt(0));
+        sb.append(c); //append is used to add charecter in stringbuffer
+
+        for(int i=1;i<st1.length();i++)
+        {
+            if (st1.charAt(i)==' '&&i<st1.length()) {
+                sb.append(st1.charAt(i));
+                i++;
+                sb.append(Character.toUpperCase(st1.charAt(i)));
+               
+            }
+            else{
+                sb.append(st1.charAt(i));
+            }
+        }
+
+        return sb.toString();
+
+    }
+}
+
+28.
+public class MyTest {
+
+    public static void main(String[] args) {
+        String str = "aaabbbcccc";
+        // Expected output: a3b3c4
+        System.out.println(myCompression(str));
+    }
+
+    public static String myCompression(String st) {
+        StringBuilder newString = new StringBuilder();
+
+        for (int i = 0; i < st.length(); i++) {
+            int count = 1;
+            while (i < st.length() - 1 && st.charAt(i) == st.charAt(i + 1)) {
+                count++;
+                i++;
+            }
+            newString.append(st.charAt(i));
+            if (count > 1) {
+                newString.append(count);
+            }
+        }
+        return newString.toString();
+    }
+}
+
+
+29.
+//Selection sort- Apna Collage 
+public class MyTest
+{
+	public static void main(String[] args) {
+		int arr[] = {5,3,4,1,2};
+		mySelectionSort(arr);
+		for(int i=0;i<arr.length;i++)
+		{
+			System.out.print(arr[i]+" ");
+		}
+	}
+	public static int [] mySelectionSort(int myArr[]) {
+		int n=myArr.length;
+		
+		for(int i=0;i<n-1;i++)
+		{
+			int minPosition = i;
+			for(int j=i+1;j<n;j++)
+			{
+				if(myArr[minPosition]>myArr[j])
+				{
+					minPosition = j;
+				}
+				
+			}
+			//Swap
+			int temp = myArr[minPosition];
+			myArr[minPosition] = myArr[i];
+			myArr[i] = temp;
+		}
+		return myArr;
+	}
+}
+
+
+30. 
+//Insertion Sort  - apna collage
+
+public class MyTest {
+    public static void main(String[] args) {
+        int arr[] = {5, 4, 1, 3, 2};
+        MyInsertionSort(arr);
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+
+    public static int[] MyInsertionSort(int arry[]) {
+    	
+        int n = arry.length;
+
+        for (int i = 1; i < n; i++) {
+            int curr = arry[i];  // Save the value to be positioned
+            int prev = i - 1;
+
+            // Shift elements of arry[0..i-1] that are greater than key to one position ahead
+            while (prev >= 0 && arry[prev] > curr) {
+                arry[prev + 1] = arry[prev];
+                prev--;
+            }
+            // Insert the key at the correct position
+            arry[prev + 1] = curr;
+        }
+        return arry;
+    }
+}
+
+31. 
+//Merg sort remaning
+
+
+
+32.
+public class MyTest
+{
+	public static void main(String[] args) {
+		int n=5;
+		
+		for(int i=1;i<=n;i++)
+		{
+			for(int j=1;j<=n-i;j++)
+			{
+				System.out.print(" ");
+			}
+			
+			for(int j=1;j<=i;j++)
+			{
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+		
+	}
+}
+
+33. 
+public class MyTest
+{
+	public static void main(String[] args) {
+		String str= "Nsquare Xperts ";
+		// erauqsN strepX
+		String reverseWord = myReverseWordFunc(str);
+		System.out.println(reverseWord);
+	}
+	public static String myReverseWordFunc(String str) {
+		
+		String [] words= str.split(" ");
+		StringBuilder reversedString= new StringBuilder();
+		
+		for(int i=0;i<words.length;i++)
+		{
+			String word= words[i];
+			
+			String reverseWords = "";
+			
+			for (int j= word.length()-1;j>=0;j--) {
+				reverseWords =reverseWords + word.charAt(j);
+			}
+	        reversedString.append(reverseWords);
+            reversedString.append(" ");
+		}   
+
+      return reversedString.toString();
+
+	}
+}
+
+
+34.
+
+public class MyTest
+{
+	public static void main(String[] args) {
+		
+		String str="tssrtsbesscsess";
+		char ch =' ';
+		int maxCount=0;
+		
+		for(int i=0;i<str.length();i++) {
+			int charCount=1;
+			
+			for(int j=i;j<str.length()-1;j++) {
+				if(str.charAt(i)==str.charAt(j)) {
+					charCount++;
+					ch=str.charAt(i);
+				}
+				if(charCount>maxCount) {
+					maxCount=charCount;
+				}
+			}
+		}
+		
+		System.out.println("Charter is "+ch+" Count is "+maxCount);
+		
+	}
+}
